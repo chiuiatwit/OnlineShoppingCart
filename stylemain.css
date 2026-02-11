@@ -45,3 +45,34 @@ footer {
     bottom: 0;
     width: 165%;
 }
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+    flex-wrap: wrap;
+}
+
+article {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    flex: 0 1 230px;
+}
+
+article img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+article p {
+    text-align: center;
+    text-indent: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
