@@ -9,14 +9,15 @@
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li><a href="main_v0.html">Home</a></li>
-            <li><a href="Cart.html">Cart</a></li>
-            <li><a href="About.html">About</a></li>
-            <li><a href="Contact.html">Contact</a></li>
-            <li><a href="Login.html">Login</a></li>
-        </ul>
+    <nav class="circle-nav">
+        <button id="menuToggle" class="circle-btn" type="button" aria-expanded="false" aria-controls="dropdownMenu">Menu</button>
+        <div id="dropdownMenu">
+            <a class="circle-btn-element" href="main_v0.html">Home</a>
+            <a class="circle-btn-element" href="Cart.html">Cart</a>
+            <a class="circle-btn-element" href="About.html">About</a>
+            <a class="circle-btn-element" href="Contact.html">Contact</a>
+            <a class="circle-btn-element" href="Login.html">Login</a>
+        </div>
     </nav>
 
     <main>
@@ -65,6 +66,31 @@
     <footer>
     <p>&copy; 2026 Shopping Cart. All rights reserved</p>
     </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const menuToggle = document.getElementById('menuToggle');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+
+        if (!menuToggle || !dropdownMenu) {
+            return;
+        }
+
+        menuToggle.addEventListener('click', function () {
+            const isOpen = dropdownMenu.classList.toggle('show');
+            menuToggle.classList.toggle('active', isOpen);
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        document.addEventListener('click', function (event) {
+            if (!event.target.closest('.circle-nav')) {
+                dropdownMenu.classList.remove('show');
+                menuToggle.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+    </script>
 
 </body>
 </html>
