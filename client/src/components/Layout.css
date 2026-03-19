@@ -1,0 +1,22 @@
+.layout {
+  display: grid;
+  grid-template-rows: var(--nav-height) 1fr auto;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+}
+
+.layout__main {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--spacing-xl);
+}
+
+.layout__footer {
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  padding: var(--spacing-lg) var(--spacing-xl);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}

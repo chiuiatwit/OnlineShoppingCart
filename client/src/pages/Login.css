@@ -1,0 +1,113 @@
+.login {
+  display: flex;
+  justify-content: center;
+  padding-top: var(--spacing-2xl);
+}
+
+.login__card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-2xl);
+  width: 100%;
+  max-width: 420px;
+}
+
+.login__title {
+  margin: 0 0 var(--spacing-xl);
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+}
+
+.login__error {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: var(--color-error);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.login__label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+}
+
+.login__input {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-base);
+  outline: none;
+  width: 100%;
+  transition: border-color 0.15s;
+}
+
+.login__input:focus {
+  border-color: var(--color-primary);
+}
+
+.login__password-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.login__password-wrap .login__input {
+  padding-right: 4.5rem;
+}
+
+.login__toggle {
+  position: absolute;
+  right: var(--spacing-sm);
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  padding: var(--spacing-xs);
+}
+
+.login__submit {
+  padding: var(--spacing-md);
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.login__submit:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.login__switch {
+  margin: var(--spacing-lg) 0 0;
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.login__switch a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login__switch a:hover {
+  text-decoration: underline;
+}
