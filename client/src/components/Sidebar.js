@@ -33,33 +33,35 @@ export default function Sidebar() {
 
         {/* Content */}
         <Box sx={{ flex: 1, overflowY: 'auto', mt: 2 }}>
-          {!user ? (
-            /* Logged-out: prompt to sign in */
-            <Box sx={{ textAlign: 'center', mt: 6 }}>
-              <Typography variant="body1" color="text.secondary" mb={3}>
-                Sign in to save products for comparison.
-              </Typography>
-              <Button
-                component={Link}
-                to="/login"
-                variant="contained"
-                onClick={closeSidebar}
-              >
-                Sign in
-              </Button>
-            </Box>
-          ) : items.length === 0 ? (
-            /* Logged-in but no saved items */
-            <Box sx={{ textAlign: 'center', mt: 6 }}>
-              <Typography variant="body2" color="text.secondary">
-                No saved items yet.
-              </Typography>
-              <Typography variant="body2" color="text.secondary" mt={1}>
-                Search for a product and hit "Save" to compare prices here.
-              </Typography>
-            </Box>
-          ) : (
-            /* Saved items list */
+          {items.length === 0 ? (
+              !user ? (
+                /* Logged-out: prompt to sign in */
+                <Box sx={{ textAlign: 'center', mt: 6 }}>
+                  <Typography variant="body1" color="text.secondary" mb={3}>
+                    Sign in to save products for comparison.
+                  </Typography>
+                  <Button
+                    component={Link}
+                    to="/login"
+                    variant="contained"
+                    onClick={closeSidebar}
+                  >
+                    Sign in
+                  </Button>
+                </Box>
+              ) : (
+                /* Logged-in but no saved items */
+                <Box sx={{ textAlign: 'center', mt: 6 }}>
+                  <Typography variant="body2" color="text.secondary">
+                    No saved items yet.
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary" mt={1}>
+                    Search for a product and hit "Save" to compare prices here.
+                  </Typography>
+                </Box>
+              )
+            ) : (
+              /* Saved items list */
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
               {items.map((item) => (
                 <Box
