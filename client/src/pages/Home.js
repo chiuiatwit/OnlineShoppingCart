@@ -21,8 +21,13 @@ export default function Home() {
       )}
 
       <h1 className="home__headline">
-        Find where to buy any product for the lowest price - instantly.
+        Track prices smarter. Buy at the right moment.
       </h1>
+
+      <p className="home__subtext">
+        Search any product, compare listings fast, and keep your saved picks in one
+        clean workspace built for focused shopping.
+      </p>
 
       <form className="home__search" onSubmit={handleSearch}>
         <input
