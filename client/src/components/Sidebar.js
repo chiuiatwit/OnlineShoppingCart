@@ -58,8 +58,9 @@ export default function Sidebar() {
 
         <Box sx={{ flex: 1, overflowY: 'auto', mt: 2 }}>
           {!user ? (
-            <Box sx={{ textAlign: 'center', mt: 8 }}>
-              <Typography variant="body1" sx={{ color: 'text.secondary', mb: 3 }}>
+            /* Logged-out: prompt to sign in */
+            <Box sx={{ textAlign: 'center', mt: 6 }}>
+              <Typography variant="body1" color="text.secondary" mb={3}>
                 Sign in to save products for comparison.
               </Typography>
               <Button
@@ -67,27 +68,22 @@ export default function Sidebar() {
                 to="/login"
                 variant="contained"
                 onClick={closeSidebar}
-                sx={{
-                  px: 2.5,
-                  py: 1.1,
-                  fontWeight: 800,
-                  background: 'linear-gradient(135deg, #2563eb, #3b82f6 58%, #22d3ee)',
-                  boxShadow: '0 0 0 1px rgba(96,165,250,0.2), 0 0 28px rgba(59,130,246,0.18)',
-                }}
               >
                 Sign in
               </Button>
             </Box>
           ) : items.length === 0 ? (
-            <Box sx={{ textAlign: 'center', mt: 8 }}>
-              <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+            /* Logged-in but no saved items */
+            <Box sx={{ textAlign: 'center', mt: 6 }}>
+              <Typography variant="body2" color="text.secondary">
                 No saved items yet.
               </Typography>
-              <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1 }}>
+              <Typography variant="body2" color="text.secondary" mt={1}>
                 Search for a product and hit "Save" to compare prices here.
               </Typography>
             </Box>
           ) : (
+            /* Saved items list */
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
               {items.map((item) => (
                 <Box

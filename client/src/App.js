@@ -8,6 +8,8 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import About from './pages/About';
+import Results from './pages/Results';
+import Product from './pages/Product';
 
 const theme = createTheme({
   palette: {
@@ -79,6 +81,8 @@ function AppRoutes() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/results" element={<Results />} />
+          <Route path="/product/:id" element={<Product />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/about" element={<About />} />
